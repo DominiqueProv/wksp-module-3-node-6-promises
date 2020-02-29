@@ -17,7 +17,6 @@ function getAddressPosition(address) {
         key: '<MY_API_KEY>',
         q: address
     };
-
     return opencage.geocode(requestObj)
         .then(data => {
             if (data.status.code == 200) {

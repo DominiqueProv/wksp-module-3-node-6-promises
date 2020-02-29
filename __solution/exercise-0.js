@@ -5,7 +5,7 @@
 
 
 const compareToTen = (num) => {
-    ppromise = new Promise((resolve, reject) => {
+    promise = new Promise((resolve, reject) => {
         if(num > 10) {
             resolve(num + " is greater than 10, success!")
         } else {
