@@ -22,6 +22,21 @@
 
 ---
 
+## Exercise 0
+
+A few vanilla JS Promises (no helper modules). Details are in `exercise-0.js`.
+
+---
+
+## NOTE on the rest of the exercises
+
+The exercises below ask you to `return` the output of the Promises. In order to see the result of the promise, you can temporarily output via a console.log the data WITHIN the promise chain (in its own `.then`).
+
+You are `return`ing the value, because you will need this functionality in a later exercise.
+
+If you console.log the the function call, you will not see the result as console.log
+doesn't wait for the promise to be resolved to execute.
+
 ## Calling APIs
 In order to do these exercises, you will need to know more about the [JSON format](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript).
 
@@ -31,7 +46,7 @@ In order to do these exercises, you will need to know more about the [JSON forma
 2. Complete the code of this function so that it returns the position of the ISS as a `Promise`.
 3. Use the data from `http://api.open-notify.org/iss-now.json` to do your work
 4. The ISS API returns the position keys as `latitude` and `longitude`. Return them as `lat` and `lng` instead.
-  
+ 
 ## Exercise 2 - `getAddressPosition`
 
 1. Complete the code of this function to return a `Promise` for a lat/lng object
@@ -60,9 +75,16 @@ You can copy/paste your code from the previous exercises, **or** require them at
 
 ## Exercise 5 - `getDistanceFromIss`
 
-Again here you should re-use two previously created functions, plus the `getDistance` function provided to you in `workshop.js`.
+Again here you should re-use two previously created functions, plus the `getDistance` function provided below.
 
 One of the functions does address ==> position and the other simply does nothing ==> position. The `getDistance` function needs the two positions to compute the final value.
+
+```js
+// Euclidian distance between two points
+function getDistance(pos1, pos2) {
+    return Math.sqrt(Math.pow(pos1.lat - pos2.lat, 2) + Math.pow(pos1.lng - pos2.lng, 2));
+}
+```
 
 ## Exercise 6 - Guess The Number
 
@@ -92,5 +114,4 @@ You can skip the step that says "draw the hangman". Instead, simply count 8 gues
 To make it more fun, integrate the following functionality:
 
 - Allow players to re-play after they won or lost (`inquirer` has a yes/no type of question)
-- Get an account at Wordnik and use their [Random Words API](http://developer.wordnik.com/docs.html#!/words/getRandomWords_get_3) to start each game with a new random word.
 - Actually draw the hangman using ASCII art
